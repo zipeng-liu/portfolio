@@ -1,0 +1,76 @@
+@import "tailwindcss";
+
+/* Custom CSS variables for ocean theme */
+:root {
+  --color-deep-blue: #05103b;
+  --color-medium-blue: #0a2463;
+  --color-light-blue: #247ba0;
+  --color-cyan: #70c1b3;
+  --color-accent: #1be7ff;
+}
+
+/* Global styles */
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Inter", sans-serif;
+  background-color: var(--color-deep-blue);
+  color: white;
+  overflow-x: hidden;
+}
+
+/* Custom animations */
+@keyframes float {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+.floating {
+  animation: float 6s ease-in-out infinite;
+}
+
+/* Hide scrollbars but keep functionality */
+.hide-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+.hide-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--color-deep-blue);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-light-blue);
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-accent);
+}
+
+.hide-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+.hide-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
