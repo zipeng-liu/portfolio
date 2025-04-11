@@ -21,20 +21,26 @@ const SkillsSection = () => {
     visible: {
       opacity: 1,
       transition: {
-        staggerChildren: 0.1,
-        delayChildren: 0.3,
+        staggerChildren: 0.05,
+        delayChildren: 0.2,
       },
     },
   };
 
   const itemVariants = {
-    hidden: { y: 20, opacity: 0 },
+    hidden: { y: 15, opacity: 0 },
     visible: {
       y: 0,
       opacity: 1,
-      transition: { duration: 0.5, ease: "easeOut" },
+      transition: { duration: 0.4, ease: "easeOut" },
     },
   };
+
+  // Determine optimal grid columns based on category
+  const gridClass =
+    activeCategory === "All"
+      ? "grid-cols-3 sm:grid-cols-4 md:grid-cols-5 lg:grid-cols-6 gap-x-8 gap-y-6"
+      : "grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-x-10 gap-y-8";
 
   return (
     <section id="skills" className="py-20 bg-blue-900/20 backdrop-blur-sm">
@@ -73,20 +79,19 @@ const SkillsSection = () => {
           ))}
         </div>
 
-        {/* Skills grid */}
+        {/* Skills grid with consistent icon size but adaptive layout */}
         <motion.div
-          key={activeCategory} // Add key to force re-render when category changes
-          className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-6"
+          key={activeCategory}
+          className={`grid ${gridClass} justify-items-center`}
           variants={containerVariants}
           initial="hidden"
           animate="visible"
-          // Remove whileInView to prevent animation issues when switching tabs
         >
           {filteredSkills.map((skill) => (
             <motion.div
-              key={`${activeCategory}-${skill.name}`} // Unique key combining category and skill
+              key={`${activeCategory}-${skill.name}`}
               variants={itemVariants}
-              className="flex flex-col items-center"
+              className="flex flex-col items-center w-full max-w-[100px]"
             >
               <div className="w-16 h-16 flex items-center justify-center bg-blue-900/50 rounded-lg mb-3 hover:bg-blue-800/70 transition-colors duration-300">
                 <TechIcon icon={skill.icon} name={skill.name} url={skill.url} />

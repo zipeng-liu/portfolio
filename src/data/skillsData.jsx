@@ -27,6 +27,7 @@ import {
   SiJest,
   SiGithubactions,
 } from "react-icons/si";
+import { TbBrandCSharp } from "react-icons/tb";
 
 // Define all skills first to use in both individual categories and the All tab
 const programmingLanguages = [
@@ -42,7 +43,7 @@ const programmingLanguages = [
   },
   {
     name: "C#",
-    icon: FaCode, // Using a generic code icon instead of SiCsharp
+    icon: TbBrandCSharp,
     url: "https://docs.microsoft.com/en-us/dotnet/csharp/",
   },
   {
