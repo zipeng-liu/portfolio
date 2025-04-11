@@ -1,10 +1,19 @@
 import { motion } from "framer-motion";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import skills from "../../data/skillsData";
 import TechIcon from "../ui/TechIcon";
 
 const SkillsSection = () => {
-  const [activeCategory, setActiveCategory] = useState("Frontend");
+  const [activeCategory, setActiveCategory] = useState("All");
+  const [filteredSkills, setFilteredSkills] = useState([]);
+
+  // Update filtered skills whenever activeCategory changes
+  useEffect(() => {
+    const category = skills.find((cat) => cat.category === activeCategory);
+    if (category && category.items) {
+      setFilteredSkills(category.items);
+    }
+  }, [activeCategory]);
 
   // Animation variants
   const containerVariants = {
@@ -27,11 +36,6 @@ const SkillsSection = () => {
     },
   };
 
-  // Filter skills based on active category
-  const filteredSkills =
-    skills.find((category) => category.category === activeCategory)?.items ||
-    [];
-
   return (
     <section id="skills" className="py-20 bg-blue-900/20 backdrop-blur-sm">
       <div className="container mx-auto px-4">
@@ -53,12 +57,12 @@ const SkillsSection = () => {
         </motion.div>
 
         {/* Category tabs */}
-        <div className="flex flex-wrap justify-center gap-4 mb-12">
+        <div className="flex flex-wrap justify-center gap-3 mb-12">
           {skills.map((category) => (
             <button
               key={category.category}
               onClick={() => setActiveCategory(category.category)}
-              className={`px-5 py-2 rounded-full transition-all duration-300 ${
+              className={`px-4 py-2 rounded-full transition-all duration-300 ${
                 activeCategory === category.category
                   ? "bg-cyan-500 text-white"
                   : "bg-blue-800/40 text-gray-300 hover:bg-blue-700/50"
@@ -71,38 +75,23 @@ const SkillsSection = () => {
 
         {/* Skills grid */}
         <motion.div
-          className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-8"
+          key={activeCategory} // Add key to force re-render when category changes
+          className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-6"
           variants={containerVariants}
           initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, margin: "-100px" }}
+          animate="visible"
+          // Remove whileInView to prevent animation issues when switching tabs
         >
-          {filteredSkills.map((skill, index) => (
+          {filteredSkills.map((skill) => (
             <motion.div
-              key={skill.name}
+              key={`${activeCategory}-${skill.name}`} // Unique key combining category and skill
               variants={itemVariants}
               className="flex flex-col items-center"
             >
-              <div className="w-16 h-16 flex items-center justify-center bg-blue-900/50 rounded-lg mb-4">
+              <div className="w-16 h-16 flex items-center justify-center bg-blue-900/50 rounded-lg mb-3 hover:bg-blue-800/70 transition-colors duration-300">
                 <TechIcon icon={skill.icon} name={skill.name} url={skill.url} />
               </div>
-              <h3 className="text-white text-lg font-medium mb-2">
-                {skill.name}
-              </h3>
-
-              {/* Proficiency bar */}
-              <div className="w-full bg-blue-900/50 h-2 rounded-full overflow-hidden">
-                <motion.div
-                  className="h-full bg-gradient-to-r from-cyan-500 to-blue-500"
-                  initial={{ width: 0 }}
-                  whileInView={{ width: `${skill.proficiency}%` }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 1, delay: 0.2 + index * 0.1 }}
-                />
-              </div>
-              <span className="text-cyan-300 text-sm mt-1">
-                {skill.proficiency}%
-              </span>
+              <h3 className="text-white text-center text-sm">{skill.name}</h3>
             </motion.div>
           ))}
         </motion.div>
