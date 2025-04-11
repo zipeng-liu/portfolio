@@ -10,13 +10,13 @@ const BubbleBackground = () => {
 
     const ctx = canvas.getContext("2d", { alpha: false });
 
-    // Generate bubbles once and reuse them
-    const bubbles = Array.from({ length: 25 }).map(() => ({
+    // Generate more bubbles with improved visibility
+    const bubbles = Array.from({ length: 40 }).map(() => ({
       x: Math.random() * window.innerWidth,
       y: window.innerHeight + Math.random() * 100, // Start below viewport
-      size: 5 + Math.random() * 30,
-      speed: 0.1 + Math.random() * 0.4, // Reduced speed for less lag
-      opacity: 0.1 + Math.random() * 0.4,
+      size: 8 + Math.random() * 35, // Slightly larger bubbles
+      speed: 0.3 + Math.random() * 0.7, // Increased speed for more dynamic movement
+      opacity: 0.2 + Math.random() * 0.5, // Higher opacity for better visibility
     }));
 
     // Set canvas dimensions and handle resize
@@ -48,26 +48,28 @@ const BubbleBackground = () => {
 
       ctx.clearRect(0, 0, canvas.width, canvas.height);
 
-      // Draw background gradient
+      // Draw background gradient with slightly more contrast
       const gradient = ctx.createLinearGradient(0, 0, 0, canvas.height);
       gradient.addColorStop(0, "#05103b"); // Deep blue at top
-      gradient.addColorStop(1, "#061c5c"); // Slightly lighter blue at bottom
+      gradient.addColorStop(1, "#061f6c"); // Slightly brighter blue at bottom
       ctx.fillStyle = gradient;
       ctx.fillRect(0, 0, canvas.width, canvas.height);
 
-      // Draw bubbles with reduced operations
+      // Draw bubbles with enhanced glow
       for (const bubble of bubbles) {
         // Normalized speed based on delta time for consistent movement
-        const moveAmount = bubble.speed * deltaTime * 0.01;
+        const moveAmount = bubble.speed * deltaTime * 0.015; // Increased movement multiplier
         bubble.y -= moveAmount;
 
         // Reset bubble when it goes off-screen
         if (bubble.y < -bubble.size) {
           bubble.y = canvas.height + bubble.size;
           bubble.x = Math.random() * canvas.width;
+          bubble.size = 8 + Math.random() * 35;
+          bubble.speed = 0.3 + Math.random() * 0.7;
         }
 
-        // Draw bubble - simplified with fewer gradient stops
+        // Draw bubble with enhanced glow
         ctx.beginPath();
         const bubbleGradient = ctx.createRadialGradient(
           bubble.x,
@@ -77,15 +79,29 @@ const BubbleBackground = () => {
           bubble.y,
           bubble.size
         );
+
+        // Brighter center color with higher opacity
         bubbleGradient.addColorStop(
           0,
-          `rgba(173, 216, 230, ${bubble.opacity})`
+          `rgba(200, 240, 255, ${bubble.opacity * 1.2})`
         );
-        bubbleGradient.addColorStop(1, `rgba(135, 206, 235, 0)`);
+
+        // Middle gradient stop for better glow effect
+        bubbleGradient.addColorStop(
+          0.6,
+          `rgba(150, 220, 255, ${bubble.opacity * 0.7})`
+        );
+
+        bubbleGradient.addColorStop(1, `rgba(100, 200, 255, 0)`);
 
         ctx.fillStyle = bubbleGradient;
         ctx.arc(bubble.x, bubble.y, bubble.size, 0, Math.PI * 2);
         ctx.fill();
+
+        // Add subtle border to enhance bubble visibility
+        ctx.strokeStyle = `rgba(150, 220, 255, ${bubble.opacity * 0.3})`;
+        ctx.lineWidth = 1;
+        ctx.stroke();
       }
 
       requestIdRef.current = requestAnimationFrame(animate);
