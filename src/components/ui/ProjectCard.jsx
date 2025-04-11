@@ -13,7 +13,7 @@ const ProjectCard = ({ project }) => {
       viewport={{ once: true, margin: "-100px" }}
       whileHover={{ y: -5 }}
     >
-      <Link to={`/project/${id}`} className="block h-full">
+      <Link to={`/project/${id}`} className="block">
         <div className="relative aspect-video overflow-hidden">
           <img
             src={coverImage}
@@ -28,24 +28,25 @@ const ProjectCard = ({ project }) => {
             {title}
           </h3>
           <p className="text-cyan-100/80 mb-4 line-clamp-2">{description}</p>
-
-          <div className="flex flex-wrap gap-4 mt-auto">
-            {techIcons.slice(0, 7).map((tech, index) => (
-              <TechIcon
-                key={index}
-                icon={tech.icon}
-                name={tech.name}
-                url={tech.url}
-              />
-            ))}
-            {techIcons.length > 7 && (
-              <div className="inline-flex items-center justify-center text-cyan-300">
-                +{techIcons.length - 7}
-              </div>
-            )}
-          </div>
         </div>
       </Link>
+
+      {/* Tech icons section outside the Link to prevent event bubbling */}
+      <div className="px-6 pb-6 flex flex-wrap gap-4 mt-auto">
+        {techIcons.slice(0, 7).map((tech, index) => (
+          <TechIcon
+            key={index}
+            icon={tech.icon}
+            name={tech.name}
+            url={tech.url}
+          />
+        ))}
+        {techIcons.length > 7 && (
+          <div className="inline-flex items-center justify-center text-cyan-300">
+            +{techIcons.length - 7}
+          </div>
+        )}
+      </div>
     </motion.div>
   );
 };
