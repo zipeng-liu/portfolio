@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
-import { FaGithub, FaLinkedinIn, FaTwitter, FaEnvelope } from "react-icons/fa";
+import { FaGithub, FaLinkedinIn, FaEnvelope } from "react-icons/fa";
+import { SiLeetcode, SiHackerrank } from "react-icons/si";
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -7,7 +8,8 @@ const Footer = () => {
   const socialLinks = [
     { icon: FaGithub, url: "https://github.com", label: "GitHub" },
     { icon: FaLinkedinIn, url: "https://linkedin.com", label: "LinkedIn" },
-    { icon: FaTwitter, url: "https://twitter.com", label: "Twitter" },
+    { icon: SiLeetcode, url: "https://leetcode.com", label: "LeetCode" },
+    { icon: SiHackerrank, url: "https://hackerrank.com", label: "HackerRank" },
     { icon: FaEnvelope, url: "mailto:hello@example.com", label: "Email" },
   ];
 
@@ -35,6 +37,7 @@ const Footer = () => {
                 rel="noopener noreferrer"
                 className="text-gray-400 hover:text-cyan-400 transition-colors duration-300"
                 aria-label={link.label}
+                title={link.label}
               >
                 <link.icon className="text-xl" />
               </a>
