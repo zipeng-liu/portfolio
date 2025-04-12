@@ -2,30 +2,90 @@ import { motion } from "framer-motion";
 import { FaGithub, FaLinkedinIn, FaEnvelope } from "react-icons/fa";
 
 const ContactSection = () => {
-  const socialLinks = [
+  const contactMethods = [
     {
       icon: FaGithub,
-      url: "https://github.com",
-      label: "GitHub",
-      color: "bg-gray-800",
+      name: "GitHub",
+      description:
+        "Check out my code repositories and open source contributions",
+      link: "https://github.com",
+      buttonText: "View GitHub Profile",
+      color: "from-gray-900 to-gray-700",
+      iconClass: "bg-gray-800",
     },
     {
       icon: FaLinkedinIn,
-      url: "https://linkedin.com",
-      label: "LinkedIn",
-      color: "bg-blue-700",
+      name: "LinkedIn",
+      description: "Connect with me professionally and view my experience",
+      link: "https://linkedin.com",
+      buttonText: "Connect on LinkedIn",
+      color: "from-blue-800 to-blue-600",
+      iconClass: "bg-blue-700",
     },
     {
       icon: FaEnvelope,
-      url: "mailto:hello@example.com",
-      label: "Email",
-      color: "bg-red-600",
+      name: "Email",
+      description: "Reach out directly for collaboration or inquiries",
+      link: "mailto:hello@example.com",
+      buttonText: "Send Email",
+      color: "from-cyan-700 to-cyan-500",
+      iconClass: "bg-cyan-600",
     },
   ];
 
+  // Animation variants
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.2,
+        delayChildren: 0.3,
+      },
+    },
+  };
+
+  const itemVariants = {
+    hidden: { y: 20, opacity: 0 },
+    visible: {
+      y: 0,
+      opacity: 1,
+      transition: { duration: 0.8, ease: "easeOut" },
+    },
+  };
+
   return (
-    <section id="contact" className="py-20">
-      <div className="container mx-auto px-4">
+    <section id="contact" className="py-20 relative">
+      {/* Ocean-themed decorative elements */}
+      <div className="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none z-0">
+        <motion.div
+          className="absolute -top-40 -left-40 w-80 h-80 rounded-full bg-blue-500/10 blur-3xl"
+          animate={{
+            scale: [1, 1.2, 1],
+            opacity: [0.3, 0.2, 0.3],
+          }}
+          transition={{
+            duration: 8,
+            repeat: Infinity,
+            repeatType: "reverse",
+          }}
+        />
+        <motion.div
+          className="absolute -bottom-20 -right-20 w-64 h-64 rounded-full bg-cyan-400/10 blur-3xl"
+          animate={{
+            scale: [1, 1.3, 1],
+            opacity: [0.2, 0.3, 0.2],
+          }}
+          transition={{
+            duration: 6,
+            repeat: Infinity,
+            repeatType: "reverse",
+            delay: 1,
+          }}
+        />
+      </div>
+
+      <div className="container mx-auto px-4 relative z-10">
         {/* Section header */}
         <motion.div
           className="text-center mb-16"
@@ -35,49 +95,67 @@ const ContactSection = () => {
           transition={{ duration: 0.6 }}
         >
           <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
-            Get In <span className="text-cyan-400">Touch</span>
+            Let's <span className="text-cyan-400">Connect</span>
           </h2>
           <p className="text-gray-300 max-w-2xl mx-auto">
-            Have a project in mind or want to discuss collaboration
-            opportunities? I'd love to hear from you. Let's create something
-            amazing together.
+            Interested in working together or have a question? Feel free to
+            reach out through any of these platforms.
           </p>
         </motion.div>
 
-        {/* Social Links */}
+        {/* Contact Methods Cards */}
         <motion.div
-          className="max-w-3xl mx-auto"
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
+          className="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto"
+          variants={containerVariants}
+          initial="hidden"
+          whileInView="visible"
           viewport={{ once: true, margin: "-100px" }}
-          transition={{ duration: 0.6 }}
         >
-          <div className="bg-blue-900/20 backdrop-blur-sm p-8 rounded-xl shadow-lg">
-            <h3 className="text-2xl font-bold text-white mb-6 text-center">
-              Connect With Me
-            </h3>
-
-            <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
-              {socialLinks.map((link, index) => (
+          {contactMethods.map((method, index) => (
+            <motion.div
+              key={index}
+              variants={itemVariants}
+              whileHover={{ y: -10, transition: { duration: 0.3 } }}
+              className={`relative bg-gradient-to-br ${method.color} rounded-xl overflow-hidden shadow-lg`}
+            >
+              <div className="absolute top-0 left-0 w-full h-full bg-blue-950 opacity-80"></div>
+              <div className="p-6 relative z-10">
+                <div
+                  className={`w-16 h-16 ${method.iconClass} rounded-full flex items-center justify-center mb-4 mx-auto`}
+                >
+                  <method.icon className="text-white text-2xl" />
+                </div>
+                <h3 className="text-xl font-bold text-white text-center mb-2">
+                  {method.name}
+                </h3>
+                <p className="text-gray-300 text-center mb-6 text-sm">
+                  {method.description}
+                </p>
                 <a
-                  key={index}
-                  href={link.url}
+                  href={method.link}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className={`${link.color} p-4 rounded-lg text-white flex items-center justify-center gap-3 hover:opacity-90 transition-all hover:scale-105`}
+                  className="block w-full py-3 text-center bg-blue-950/60 hover:bg-blue-900/80 text-white rounded-lg transition-colors duration-300"
                 >
-                  <link.icon className="text-2xl" />
-                  <span>{link.label}</span>
+                  {method.buttonText}
                 </a>
-              ))}
-            </div>
+              </div>
+            </motion.div>
+          ))}
+        </motion.div>
 
-            <p className="text-center text-gray-300 mt-8">
-              Feel free to reach out through any of these platforms. I'm always
-              open to discussing new projects, creative ideas, or opportunities
-              to collaborate.
-            </p>
-          </div>
+        {/* Bottom Message */}
+        <motion.div
+          className="text-center mt-12 text-gray-400 max-w-2xl mx-auto"
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          viewport={{ once: true }}
+          transition={{ delay: 0.8, duration: 0.6 }}
+        >
+          <p>
+            Looking forward to connecting and exploring how we can collaborate
+            on your next project.
+          </p>
         </motion.div>
       </div>
     </section>

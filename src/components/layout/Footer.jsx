@@ -1,16 +1,13 @@
 import { Link } from "react-router-dom";
-import { FaGithub, FaLinkedinIn, FaEnvelope } from "react-icons/fa";
-import { SiLeetcode, SiHackerrank } from "react-icons/si";
+import { SiLeetcode } from "react-icons/si";
+import { FaHackerrank } from "react-icons/fa";
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
 
   const socialLinks = [
-    { icon: FaGithub, url: "https://github.com", label: "GitHub" },
-    { icon: FaLinkedinIn, url: "https://linkedin.com", label: "LinkedIn" },
     { icon: SiLeetcode, url: "https://leetcode.com", label: "LeetCode" },
-    { icon: SiHackerrank, url: "https://hackerrank.com", label: "HackerRank" },
-    { icon: FaEnvelope, url: "mailto:hello@example.com", label: "Email" },
+    { icon: FaHackerrank, url: "https://hackerrank.com", label: "HackerRank" },
   ];
 
   return (
