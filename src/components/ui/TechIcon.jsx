@@ -13,13 +13,12 @@ const TechIcon = ({ icon: Icon, name, url }) => {
         className="text-cyan-300 hover:text-cyan-100 transition-colors duration-300"
         aria-label={name}
         onClick={(e) => {
-          // Prevent default only if url is missing or invalid
           if (!url || url === "#") {
             e.preventDefault();
           }
         }}
       >
-        <Icon className="text-2xl md:text-3xl" />
+        <Icon className="text-3xl md:text-4xl" />
       </a>
     </motion.div>
   );

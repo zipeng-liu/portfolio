@@ -36,11 +36,9 @@ const SkillsSection = () => {
     },
   };
 
-  // Determine optimal grid columns based on category
+  // Use more columns but with smaller gap to keep items closer together
   const gridClass =
-    activeCategory === "All"
-      ? "grid-cols-3 sm:grid-cols-4 md:grid-cols-5 lg:grid-cols-6 gap-x-8 gap-y-6"
-      : "grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-x-10 gap-y-8";
+    "grid-cols-3 sm:grid-cols-4 md:grid-cols-5 lg:grid-cols-6 xl:grid-cols-7 gap-4";
 
   return (
     <section id="skills" className="py-20 bg-blue-900/20 backdrop-blur-sm">
@@ -79,10 +77,10 @@ const SkillsSection = () => {
           ))}
         </div>
 
-        {/* Skills grid with consistent icon size but adaptive layout */}
+        {/* Skills grid with larger, consistent icon size and tighter spacing */}
         <motion.div
           key={activeCategory}
-          className={`grid ${gridClass} justify-items-center`}
+          className={`grid ${gridClass}`}
           variants={containerVariants}
           initial="hidden"
           animate="visible"
@@ -91,9 +89,9 @@ const SkillsSection = () => {
             <motion.div
               key={`${activeCategory}-${skill.name}`}
               variants={itemVariants}
-              className="flex flex-col items-center w-full max-w-[100px]"
+              className="flex flex-col items-center"
             >
-              <div className="w-16 h-16 flex items-center justify-center bg-blue-900/50 rounded-lg mb-3 hover:bg-blue-800/70 transition-colors duration-300">
+              <div className="w-20 h-20 flex items-center justify-center bg-blue-900/50 rounded-lg mb-2 hover:bg-blue-800/70 transition-colors duration-300">
                 <TechIcon icon={skill.icon} name={skill.name} url={skill.url} />
               </div>
               <h3 className="text-white text-center text-sm">{skill.name}</h3>
