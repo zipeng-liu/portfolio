@@ -39,7 +39,7 @@ const IntroSection = () => {
         >
           <motion.div variants={itemVariants} className="mb-6">
             <span className="bg-cyan-500/20 text-cyan-300 px-4 py-1.5 rounded-full text-sm inline-block mb-4">
-              Frontend Developer
+              Full Stack Developer
             </span>
           </motion.div>
 
@@ -47,17 +47,29 @@ const IntroSection = () => {
             variants={itemVariants}
             className="text-4xl md:text-6xl font-bold text-white leading-tight mb-6"
           >
-            Dive into my <span className="text-cyan-400">creative ocean</span>{" "}
-            of web development
+            Hi, I'm <span className="text-cyan-400">Zipeng Liu</span>
           </motion.h1>
+
+          <motion.h2
+            variants={itemVariants}
+            className="text-2xl md:text-3xl font-medium text-white leading-tight mb-6"
+          >
+            Dive into my <span className="text-cyan-400">creative ocean</span>{" "}
+            where code and design flow together as one
+          </motion.h2>
 
           <motion.p
             variants={itemVariants}
             className="text-lg text-gray-300 mb-10 md:px-8"
           >
-            I craft responsive and interactive web experiences with modern
-            technologies. My focus is on creating clean, efficient, and
-            user-friendly interfaces that make a splash in the digital world.
+            My programming journey began with creating a maze game in Racket—a
+            project that sparked my passion for coding and problem-solving. At
+            the University of Toronto, I developed strong analytical skills
+            through my studies in statistics and data science, then expanded
+            into full-stack web development at the British Columbia Institute of
+            Technology. This unique combination allows me to approach projects
+            with both technical expertise and strategic thinking, creating
+            digital solutions that are functional, intuitive, and purposeful.
           </motion.p>
 
           <motion.div

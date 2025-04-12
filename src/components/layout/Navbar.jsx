@@ -54,7 +54,7 @@ const Navbar = () => {
       <div className="container mx-auto px-4 py-4 flex justify-between items-center">
         {/* Logo/Name */}
         <Link to="/" className="text-white text-xl md:text-2xl font-bold">
-          <span className="text-cyan-400">Ocean</span>Portfolio
+          <span className="text-cyan-400">Zipeng</span>Portfolio
         </Link>
 
         {/* Desktop Navigation */}
