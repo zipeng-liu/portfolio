@@ -39,9 +39,11 @@ const projects = [
       "Beep is a personal safety app for women and minorities offering AI safe routes, crime maps, location sharing, and instant alerts",
     coverImage: "/images/project1/cover.jpg",
     images: [
-      "/images/project2/picture1.png",
-      "/images/project2/picture1.png",
-      "/images/project2/picture1.png",
+      "/images/project1/picture1.png",
+      "/images/project1/picture2.png",
+      "/images/project1/picture3.png",
+      "/images/project1/picture4.png",
+      "/images/project1/picture5.png",
     ],
     techIcons: [
       {
@@ -96,6 +98,8 @@ const projects = [
       "Search and filter functionality by species or depth",
       "Mobile-responsive design with touch controls",
     ],
+    reflection:
+      "I did well by building a clear foundation and organized architecture for the app. By setting up folders so each one handled a specific feature with its logic, the team could easily divide work and focus on separate features without running into many merge conflicts. However, one significant mistake we made was relying on the CSS export functionality directly from Figma, especially given the heavy frontend and backend workloads within tight time constraints. The results didn’t work well as Figma exported styles individually by ID, making it challenging and inefficient to manage using vanilla CSS. If I could go back, I would use Bootstrap to streamline styling and accelerate development significantly. Another important takeaway was prioritizing the features that matter most to the user, ensuring we deliver maximum value in a limited time. Additionally, I’ve learned the importance of proactively addressing technical constraints early in the project. Identifying and resolving potential development issues earlier could have saved us considerable time and effort.",
     conclusion:
       "This project pushed the boundaries of web-based 3D rendering while providing an educational tool. Future improvements could include AR capabilities and more extensive species database.",
   },
@@ -152,11 +156,10 @@ const projects = [
   },
   {
     id: 3,
-    title: "Marine Conservation Platform",
+    title: "High School Website Redesign",
     description:
       "A community-driven website for ocean cleanup initiatives and conservation projects",
-    coverImage:
-      "https://images.unsplash.com/photo-1559252722-fb8915a77b8c?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80",
+    coverImage: "/images/project3/cover.jpg",
     images: [
       "https://images.unsplash.com/photo-1559252722-fb8915a77b8c?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80",
       "https://images.unsplash.com/photo-1618956900896-9e8097552a8a?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80",
@@ -199,11 +202,10 @@ const projects = [
   },
   {
     id: 4,
-    title: "Underwater Photography Portfolio",
+    title: "Oqua",
     description:
       "A responsive gallery website showcasing stunning underwater photography",
-    coverImage:
-      "https://images.unsplash.com/photo-1550505095-8347b331b3f5?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80",
+    coverImage: "/images/project4/cover.jpg",
     images: [
       "https://images.unsplash.com/photo-1550505095-8347b331b3f5?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80",
       "https://images.unsplash.com/photo-1549924231-f129b911e442?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80",
