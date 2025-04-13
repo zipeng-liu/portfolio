@@ -22,7 +22,9 @@ import {
   SiNextdotjs,
   SiGraphql,
   SiTypescript,
-  SiRedux,
+  SiMysql,
+  SiPrisma,
+  SiCss3,
   SiFirebase,
 } from "react-icons/si";
 
@@ -81,26 +83,29 @@ const projects = [
       "Local Harvest is an online marketplace that connects shoppers to nearby farmers for easy pre‑ordering of fresh, local produce",
     coverImage: "/images/project2/cover.jpg",
     images: [
-      "https://images.unsplash.com/photo-1573648214626-2cd56b7bc17f?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80",
-      "https://images.unsplash.com/photo-1581092921461-7d55b9d5b0b1?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80",
-      "https://images.unsplash.com/photo-1532771098148-525cefe10c23?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80",
+      "/images/project2/picture1.png",
+      "/images/project2/picture2.png",
+      "/images/project2/picture3.png",
+      "/images/project2/picture4.png",
     ],
     techIcons: [
-      { icon: FaReact, name: "React", url: "https://reactjs.org/" },
-      { icon: SiRedux, name: "Redux", url: "https://redux.js.org/" },
       {
-        icon: SiTailwindcss,
-        name: "Tailwind CSS",
-        url: "https://tailwindcss.com/",
+        icon: SiTypescript,
+        name: "Typescript",
+        url: "https://www.typescriptlang.org/",
+      },
+      {
+        icon: SiCss3,
+        name: "CSS3",
+        url: "https://developer.mozilla.org/en-US/docs/Web/CSS",
       },
       { icon: FaNodeJs, name: "Node.js", url: "https://nodejs.org/" },
       { icon: SiExpress, name: "Express", url: "https://expressjs.com/" },
-      { icon: SiMongodb, name: "MongoDB", url: "https://www.mongodb.com/" },
-      { icon: FaDocker, name: "Docker", url: "https://www.docker.com/" },
-      { icon: FaAws, name: "AWS", url: "https://aws.amazon.com/" },
+      { icon: SiPrisma, name: "Prisma", url: "https://www.prisma.io/" },
+      { icon: SiMysql, name: "MySQL", url: "https://www.mysql.com/" },
     ],
-    githubUrl: "https://github.com",
-    demoUrl: "https://example.com",
+    githubUrl: "https://github.com/zipeng-liu/local-harvest-app",
+    demoUrl: "https://local-harvest-app.onrender.com/",
     motivation:
       "In today’s world, everything is shifting towards digital—from ordering food to buying groceries, almost anything can be purchased online. Unlike large corporations with ample resources to launch their online stores, local farmers and market vendors often lack the tools and knowledge to sell their products online. Similarly, customers seeking fresh, locally sourced items face uncertain product availability, frequently visiting markets to discover their desired products are unavailable. This project aims to build an online marketplace that bridges the gap between buyers and sellers, empowering local businesses while providing consumers with reliable access to fresh, locally-grown goods.",
     objectives: [
