@@ -44,12 +44,10 @@ const Carousel = ({ images, autoAdvance = false, interval = 8000 }) => {
   };
 
   return (
-    <div className="relative w-full max-w-6xl mx-auto h-[26rem] md:h-[32rem] lg:h-[36rem] overflow-hidden rounded-xl">
+    <div className="relative w-full max-w-6xl mx-auto overflow-hidden rounded-xl aspect-[16/9]">
       <AnimatePresence initial={false} custom={direction} mode="wait">
-        <motion.img
+        <motion.div
           key={currentIndex}
-          src={images[currentIndex]}
-          alt={`Slide ${currentIndex + 1}`}
           custom={direction}
           variants={slideVariants}
           initial="enter"
@@ -59,24 +57,30 @@ const Carousel = ({ images, autoAdvance = false, interval = 8000 }) => {
             x: { type: "spring", stiffness: 300, damping: 30 },
             opacity: { duration: 0.2 },
           }}
-          className="absolute w-full h-full object-cover object-center"
-        />
+          className="absolute inset-0"
+        >
+          <img
+            src={images[currentIndex]}
+            alt={`Slide ${currentIndex + 1}`}
+            className="w-full h-full object-cover object-center"
+          />
+        </motion.div>
       </AnimatePresence>
 
       {/* Arrow Controls */}
       <button
         onClick={goToPrev}
-        className="absolute left-4 top-1/2 transform -translate-y-1/2 bg-black/30 hover:bg-black/50 text-white rounded-full p-3 transition-colors duration-300"
+        className="absolute left-4 top-1/2 transform -translate-y-1/2 bg-black/30 hover:bg-black/50 text-white rounded-full p-2 sm:p-3 transition-colors duration-300 z-10"
         aria-label="Previous slide"
       >
-        <FaChevronLeft size={20} />
+        <FaChevronLeft className="text-sm sm:text-base md:text-lg" />
       </button>
       <button
         onClick={goToNext}
-        className="absolute right-4 top-1/2 transform -translate-y-1/2 bg-black/30 hover:bg-black/50 text-white rounded-full p-3 transition-colors duration-300"
+        className="absolute right-4 top-1/2 transform -translate-y-1/2 bg-black/30 hover:bg-black/50 text-white rounded-full p-2 sm:p-3 transition-colors duration-300 z-10"
         aria-label="Next slide"
       >
-        <FaChevronRight size={20} />
+        <FaChevronRight className="text-sm sm:text-base md:text-lg" />
       </button>
     </div>
   );
