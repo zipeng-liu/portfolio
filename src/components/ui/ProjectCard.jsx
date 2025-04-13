@@ -7,7 +7,7 @@ const ProjectCard = ({ project }) => {
 
   return (
     <motion.div
-      className="bg-gradient-to-b from-blue-900/40 to-blue-900/20 backdrop-blur-sm rounded-xl overflow-hidden shadow-xl hover:shadow-cyan-500/20 transition-all duration-500"
+      className="bg-gradient-to-b from-blue-900/30 to-blue-900/10 backdrop-blur-sm rounded-xl overflow-hidden shadow-xl hover:shadow-cyan-500/20 transition-all duration-500"
       initial={{ opacity: 0, y: 20 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: "-100px" }}
@@ -20,7 +20,7 @@ const ProjectCard = ({ project }) => {
             alt={title}
             className="w-full h-full object-cover transition-transform duration-500 hover:scale-110"
           />
-          <div className="absolute inset-0 bg-gradient-to-t from-blue-900 to-transparent opacity-70"></div>
+          <div className="absolute inset-0 bg-gradient-to-t from-blue-900 to-transparent opacity-40"></div>
         </div>
 
         <div className="p-6">
