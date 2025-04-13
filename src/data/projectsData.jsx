@@ -86,22 +86,27 @@ const projects = [
     githubUrl: "https://github.com",
     demoUrl: "https://youtube.com/shorts/GoaUL_IReU8",
     motivation:
-      "I wanted to create an immersive experience that educates users about deep-sea ecosystems while showcasing my front-end development skills.",
-    objectives:
-      "Learn Three.js for 3D rendering, implement interactive data visualization, and optimize performance for complex animations.",
+      "In many cities, women, people of color, and other under‑represented groups often feel uneasy or unsafe walking alone at night. Although several personal‑safety apps already exist, none of them combine crime data mapping with AI to suggest truly safer routes. Our goal is to build an app that fills this gap and gives vulnerable users more confidence to navigate.",
+    objectives: [
+      "Work inside an 8‑member cross‑functional team (4 developers, 4 designers).",
+      "Learn mobile development from scratch with Expo—reading docs, self‑teaching, and balancing schoolwork.",
+      "Explore AI / machine‑learning options and integrate them into the project.",
+      "Present the finished product to non‑technical audiences.",
+    ],
     targetMarket:
-      "Educational institutions, marine biology enthusiasts, and interactive media consumers.",
+      "People who want extra personal security—especially women, people of color, and anyone from under‑represented communities who must navigate unfamiliar or higher‑risk areas.",
     features: [
-      "Interactive 3D models of deep-sea creatures",
-      "Educational information cards with species details",
-      "Depth simulation with pressure and light changes",
-      "Search and filter functionality by species or depth",
-      "Mobile-responsive design with touch controls",
+      "AI Safe Route: Generates safe‑route with directions that avoid incident hotspots.",
+      "Intelligent Crime Mapping: A live map that highlights recent incidents.",
+      "Real‑Time Location Sharing: Trusted contacts can watch your trip until you arrive.",
+      "Emergency Alerts: One‑tap SOS with a loud alarm.",
+      "Surroundings Recording: Snap photos of anything suspicious without leaving the app.",
+      "Safe Zones: Locate nearby open businesses or public spaces where you can step inside for help.",
     ],
     reflection:
-      "I did well by building a clear foundation and organized architecture for the app. By setting up folders so each one handled a specific feature with its logic, the team could easily divide work and focus on separate features without running into many merge conflicts. However, one significant mistake we made was relying on the CSS export functionality directly from Figma, especially given the heavy frontend and backend workloads within tight time constraints. The results didn’t work well as Figma exported styles individually by ID, making it challenging and inefficient to manage using vanilla CSS. If I could go back, I would use Bootstrap to streamline styling and accelerate development significantly. Another important takeaway was prioritizing the features that matter most to the user, ensuring we deliver maximum value in a limited time. Additionally, I’ve learned the importance of proactively addressing technical constraints early in the project. Identifying and resolving potential development issues earlier could have saved us considerable time and effort.",
+      "This was my first mobile project, and our team started with zero mobile experience. After consulting a former instructor, we chose to build a fully native app instead of using a WebView wrapper because we wanted to deliver a smoother user experience. That decision forced us to dive deep into Expo, React Native, and unfamiliar mobile APIs, so every sprint became a crash course in new tools. At first we didn’t run Agile well: sometimes huge tasks went to one person, task descriptions were unclear, and deadlines slipped—stressful for everyone. Halfway through the semester we held a reset meeting. We elected a new product manager, broke every epic into smaller tasks, and reorganized our Trello workflow so designers and developers could sync daily. Once priorities were crystal‑clear, momentum returned: features were finished faster, morale climbed, and the team responded more quickly. The payoff came at the annual showcase—our safety app placed third out of ten teams. I learned two big lessons: first, product management and communication are as critical as code; and second, tackling hard tech is doable when you devote time to learn, split work smartly, and keep the feedback loop tight.",
     conclusion:
-      "This project pushed the boundaries of web-based 3D rendering while providing an educational tool. Future improvements could include AR capabilities and more extensive species database.",
+      "Building this safety app demonstrated the power of a well-coordinated team that communicates, plans, and adapts effectively. Facing real‑world safety challenges offered us a unique learning opportunity: we honed our technical skills, embraced cross‑disciplinary collaboration, and experienced the same trade‑offs professionals face with shifting scope, tight deadlines, and evolving user needs. By integrating live crime data with AI routing, we created a tool that truly enhances personal safety. The project significantly boosted our professional growth and reinforced the importance of hands‑on experience in a fast‑paced tech environment.",
   },
   {
     id: 2,
@@ -136,18 +141,18 @@ const projects = [
     motivation:
       "In today’s world, everything is shifting towards digital—from ordering food to buying groceries, almost anything can be purchased online. Unlike large corporations with ample resources to launch their online stores, local farmers and market vendors often lack the tools and knowledge to sell their products online. Similarly, customers seeking fresh, locally sourced items face uncertain product availability, frequently visiting markets to discover their desired products are unavailable. This project aims to build an online marketplace that bridges the gap between buyers and sellers, empowering local businesses while providing consumers with reliable access to fresh, locally-grown goods.",
     objectives: [
-      "Running an Agile project for the first time, including managing sprints, tasks, and iterative development",
-      "Translating designs provided by the design team into a fully functional and responsive web application",
-      "Collecting continuous user feedback and integrating it into development cycles to improve user experience",
-      "Practicing server-side rendering with EJS for efficient dynamic content generation and managing database operations using Prisma ORM in a scalable web application",
+      "Running an Agile project for the first time, including managing sprints, tasks, and iterative development.",
+      "Translating designs provided by the design team into a fully functional and responsive web application.",
+      "Collecting continuous user feedback and integrating it into development cycles to improve user experience.",
+      "Practicing server-side rendering with EJS for efficient dynamic content generation and managing database operations using Prisma ORM in a scalable web application.",
     ],
     targetMarket:
       "This platform’s target audience is local farmers, small market vendors, and consumers who prefer purchasing fresh, locally grown products online for convenient in-person pickup.",
     features: [
-      "Browse Markets and Products: Customers can explore market details and vendor profiles and view the range of products each vendor offers",
-      "Place Orders as a Customer: Browse products, add items to the cart, adjust quantities, and submit an order for in-person pickup",
-      "Manage Product Inventory: Vendors can add new products, update existing items, and easily manage details such as price, availability, and product descriptions",
-      "View Order History: Customers and vendors have access to detailed records of past orders, ensuring transparency and easy transaction tracking",
+      "Browse Markets and Products: Customers can explore market details and vendor profiles and view the range of products each vendor offers.",
+      "Place Orders as a Customer: Browse products, add items to the cart, adjust quantities, and submit an order for in-person pickup.",
+      "Manage Product Inventory: Vendors can add new products, update existing items, and easily manage details such as price, availability, and product descriptions.",
+      "View Order History: Customers and vendors have access to detailed records of past orders, ensuring transparency and easy transaction tracking.",
     ],
     reflection:
       "I did well by building a clear foundation and organized architecture for the app. By setting up folders so each one handled a specific feature with its logic, the team could easily divide work and focus on separate features without running into many merge conflicts. However, one significant mistake we made was relying on the CSS export functionality directly from Figma, especially given the heavy frontend and backend workloads within tight time constraints. The results didn’t work well as Figma exported styles individually by ID, making it challenging and inefficient to manage using vanilla CSS. If I could go back, I would use Bootstrap to streamline styling and accelerate development significantly. Another important takeaway was prioritizing the features that matter most to the user, ensuring we deliver maximum value in a limited time. Additionally, I’ve learned the importance of proactively addressing technical constraints early in the project. Identifying and resolving potential development issues earlier could have saved us considerable time and effort.",
