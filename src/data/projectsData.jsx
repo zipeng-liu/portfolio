@@ -26,40 +26,63 @@ import {
   SiPrisma,
   SiCss3,
   SiFirebase,
+  SiExpo,
+  SiTensorflow,
+  SiAwslambda,
 } from "react-icons/si";
 
 const projects = [
   {
     id: 1,
-    title: "Deep Ocean Explorer",
+    title: "Beep",
     description:
-      "An interactive 3D visualization of deep sea creatures and their habitats",
-    coverImage:
-      "https://images.unsplash.com/photo-1551244072-5d12893278ab?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80",
+      "Beep is a personal safety app for women and minorities offering AI safe routes, crime maps, location sharing, and instant alerts",
+    coverImage: "/images/project1/cover.jpg",
     images: [
-      "https://images.unsplash.com/photo-1551244072-5d12893278ab?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80",
-      "https://images.unsplash.com/photo-1682687982107-14492010e05e?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80",
-      "https://images.unsplash.com/photo-1580019542155-247062e19ce4?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80",
+      "/images/project2/picture1.png",
+      "/images/project2/picture1.png",
+      "/images/project2/picture1.png",
     ],
     techIcons: [
-      { icon: FaReact, name: "React", url: "https://reactjs.org/" },
-      {
-        icon: SiTailwindcss,
-        name: "Tailwind CSS",
-        url: "https://tailwindcss.com/",
-      },
-      { icon: SiNextdotjs, name: "Next.js", url: "https://nextjs.org/" },
       {
         icon: SiTypescript,
         name: "TypeScript",
         url: "https://www.typescriptlang.org/",
       },
-      { icon: SiGraphql, name: "GraphQL", url: "https://graphql.org/" },
-      { icon: FaNodeJs, name: "Node.js", url: "https://nodejs.org/" },
-      { icon: SiMongodb, name: "MongoDB", url: "https://www.mongodb.com/" },
+      { icon: SiExpo, name: "Expo", url: "https://expo.dev/" },
+      {
+        icon: FaReact,
+        name: "React Native",
+        url: "https://reactnative.dev/",
+      },
+      {
+        icon: SiFirebase,
+        name: "Firebase",
+        url: "https://firebase.google.com/",
+      },
+      {
+        icon: FaPython,
+        name: "Python",
+        url: "https://www.python.org/",
+      },
+      {
+        icon: SiTensorflow,
+        name: "Tensorflow",
+        url: "https://www.tensorflow.org/",
+      },
+      {
+        icon: SiAwslambda,
+        name: "AWS Lambda",
+        url: "https://aws.amazon.com/pm/lambda/?trk=d87368f2-b0ac-4e30-804b-b10e2d25d291&sc_channel=ps&ef_id=CjwKCAjwwe2_BhBEEiwAM1I7sQBM5xhw9La8KTnfTaMnd6J1fEE9lRZXPM8AGxZ_NaCK_xj-7pnzEBoCYDUQAvD_BwE:G:s&s_kwcid=AL!4422!3!651612781100!e!!g!!aws%20lambda!19836398320!150095228874&gclid=CjwKCAjwwe2_BhBEEiwAM1I7sQBM5xhw9La8KTnfTaMnd6J1fEE9lRZXPM8AGxZ_NaCK_xj-7pnzEBoCYDUQAvD_BwE",
+      },
+      {
+        icon: SiCss3,
+        name: "CSS3",
+        url: "https://developer.mozilla.org/en-US/docs/Web/CSS",
+      },
     ],
     githubUrl: "https://github.com",
-    demoUrl: "https://example.com",
+    demoUrl: "https://youtube.com/shorts/GoaUL_IReU8",
     motivation:
       "I wanted to create an immersive experience that educates users about deep-sea ecosystems while showcasing my front-end development skills.",
     objectives:
@@ -94,15 +117,15 @@ const projects = [
         name: "Typescript",
         url: "https://www.typescriptlang.org/",
       },
+      { icon: FaNodeJs, name: "Node.js", url: "https://nodejs.org/" },
+      { icon: SiExpress, name: "Express", url: "https://expressjs.com/" },
+      { icon: SiPrisma, name: "Prisma", url: "https://www.prisma.io/" },
+      { icon: SiMysql, name: "MySQL", url: "https://www.mysql.com/" },
       {
         icon: SiCss3,
         name: "CSS3",
         url: "https://developer.mozilla.org/en-US/docs/Web/CSS",
       },
-      { icon: FaNodeJs, name: "Node.js", url: "https://nodejs.org/" },
-      { icon: SiExpress, name: "Express", url: "https://expressjs.com/" },
-      { icon: SiPrisma, name: "Prisma", url: "https://www.prisma.io/" },
-      { icon: SiMysql, name: "MySQL", url: "https://www.mysql.com/" },
     ],
     githubUrl: "https://github.com/zipeng-liu/local-harvest-app",
     demoUrl: "https://local-harvest-app.onrender.com/",
