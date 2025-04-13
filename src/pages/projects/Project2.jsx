@@ -96,37 +96,66 @@ const Project2 = () => {
 
           {/* Project details */}
           <div className="grid md:grid-cols-2 gap-8">
-            <div>
-              {/* <h2 className="text-2xl font-bold text-white mb-4">Motivation</h2> */}
-              <p className="text-gray-300 mb-8">{project.motivation}</p>
+            <div className="space-y-6">
+              {/* Project-related information */}
+              <div className="bg-blue-900/30 backdrop-blur-sm p-6 rounded-xl shadow-md">
+                <h2 className="text-2xl font-bold text-white mb-4">
+                  Motivation
+                </h2>
+                <p className="text-gray-300">{project.motivation}</p>
+              </div>
 
-              {/* <h2 className="text-2xl font-bold text-white mb-4">
-                Target Market
-              </h2> */}
-              <p className="text-gray-300 mb-4">{project.targetMarket}</p>
+              <div className="bg-blue-900/30 backdrop-blur-sm p-6 rounded-xl shadow-md">
+                <h2 className="text-2xl font-bold text-white mb-4">
+                  Target Market
+                </h2>
+                <p className="text-gray-300">{project.targetMarket}</p>
+              </div>
 
-              <h2 className="text-2xl font-bold text-white mb-4">
-                Learning Objectives
-              </h2>
-              <ul className="list-disc pl-5 text-gray-300 mb-8 space-y-2">
-                {project.objectives.map((feature, index) => (
-                  <li key={index}>{feature}</li>
-                ))}
-              </ul>
+              <div className="bg-blue-900/30 backdrop-blur-sm p-6 rounded-xl shadow-md">
+                <h2 className="text-2xl font-bold text-white mb-4">
+                  Key Features
+                </h2>
+                <ul className="list-disc pl-5 text-gray-300 space-y-2">
+                  {project.features.map((feature, index) => (
+                    <li key={index}>{feature}</li>
+                  ))}
+                </ul>
+              </div>
             </div>
 
-            <div>
-              <h2 className="text-2xl font-bold text-white mb-4">
-                Key Features
-              </h2>
-              <ul className="list-disc pl-5 text-gray-300 mb-8 space-y-2">
-                {project.features.map((feature, index) => (
-                  <li key={index}>{feature}</li>
-                ))}
-              </ul>
+            <div className="space-y-6">
+              {/* Learning-related information */}
+              <div className="bg-blue-900/30 backdrop-blur-sm p-6 rounded-xl shadow-md">
+                <h2 className="text-2xl font-bold text-white mb-4">
+                  Learning Objectives
+                </h2>
+                {Array.isArray(project.objectives) ? (
+                  <ul className="list-disc pl-5 text-gray-300 space-y-2">
+                    {project.objectives.map((objective, index) => (
+                      <li key={index}>{objective}</li>
+                    ))}
+                  </ul>
+                ) : (
+                  <p className="text-gray-300">{project.objectives}</p>
+                )}
+              </div>
 
-              <h2 className="text-2xl font-bold text-white mb-4">Conclusion</h2>
-              <p className="text-gray-300">{project.conclusion}</p>
+              {project.reflection && (
+                <div className="bg-blue-900/30 backdrop-blur-sm p-6 rounded-xl shadow-md">
+                  <h2 className="text-2xl font-bold text-white mb-4">
+                    Reflection
+                  </h2>
+                  <p className="text-gray-300">{project.reflection}</p>
+                </div>
+              )}
+
+              <div className="bg-blue-900/30 backdrop-blur-sm p-6 rounded-xl shadow-md">
+                <h2 className="text-2xl font-bold text-white mb-4">
+                  Conclusion
+                </h2>
+                <p className="text-gray-300">{project.conclusion}</p>
+              </div>
             </div>
           </div>
 

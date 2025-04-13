@@ -112,14 +112,15 @@ const projects = [
     targetMarket:
       "This platform’s target audience is local farmers, small market vendors, and consumers who prefer purchasing fresh, locally grown products online for convenient in-person pickup.",
     features: [
-      "Real-time data streaming from oceanic sensors",
-      "Customizable dashboard with drag-and-drop widgets",
-      "Historical data comparison tools",
-      "Anomaly detection with machine learning",
-      "Export functionality for research papers",
+      "Browse Markets and Products: Customers can explore market details and vendor profiles and view the range of products each vendor offers",
+      "Place Orders as a Customer: Browse products, add items to the cart, adjust quantities, and submit an order for in-person pickup",
+      "Manage Product Inventory: Vendors can add new products, update existing items, and easily manage details such as price, availability, and product descriptions",
+      "View Order History: Customers and vendors have access to detailed records of past orders, ensuring transparency and easy transaction tracking",
     ],
+    reflection:
+      "I did well by building a clear foundation and organized architecture for the app. By setting up folders so each one handled a specific feature with its logic, the team could easily divide work and focus on separate features without running into many merge conflicts. However, one significant mistake we made was relying on the CSS export functionality directly from Figma, especially given the heavy frontend and backend workloads within tight time constraints. The results didn’t work well as Figma exported styles individually by ID, making it challenging and inefficient to manage using vanilla CSS. If I could go back, I would use Bootstrap to streamline styling and accelerate development significantly. Another important takeaway was prioritizing the features that matter most to the user, ensuring we deliver maximum value in a limited time. Additionally, I’ve learned the importance of proactively addressing technical constraints early in the project. Identifying and resolving potential development issues earlier could have saved us considerable time and effort.",
     conclusion:
-      "This project successfully bridges the gap between complex oceanic data and accessible visualization, enabling researchers to identify patterns more efficiently.",
+      "This project was an excellent learning opportunity and a valuable team experience. It allowed me to build an app from scratch based on designs created by others. It also significantly grew my ability to conduct user surveys and perform effective user testing, helping me better understand user needs and preferences. Overall, the experience strengthened my skills in collaborative development, user-centric design, and agile project management.",
   },
   {
     id: 3,
@@ -163,6 +164,8 @@ const projects = [
       "Event organization tools with volunteer management",
       "Before/after photo galleries of cleanup sites",
     ],
+    reflection:
+      "I did well by building a clear foundation and organized architecture for the app. By setting up folders so each one handled a specific feature with its logic, the team could easily divide work and focus on separate features without running into many merge conflicts. However, one significant mistake we made was relying on the CSS export functionality directly from Figma, especially given the heavy frontend and backend workloads within tight time constraints. The results didn’t work well as Figma exported styles individually by ID, making it challenging and inefficient to manage using vanilla CSS. If I could go back, I would use Bootstrap to streamline styling and accelerate development significantly. Another important takeaway was prioritizing the features that matter most to the user, ensuring we deliver maximum value in a limited time. Additionally, I’ve learned the importance of proactively addressing technical constraints early in the project. Identifying and resolving potential development issues earlier could have saved us considerable time and effort.",
     conclusion:
       "The platform has successfully connected volunteers with conservation projects worldwide, resulting in measurable impact on coastal ecosystems.",
   },
