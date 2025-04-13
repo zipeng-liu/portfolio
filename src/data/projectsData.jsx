@@ -76,11 +76,10 @@ const projects = [
   },
   {
     id: 2,
-    title: "Wave Analytics Dashboard",
+    title: "Local Harvest",
     description:
-      "A real-time data visualization platform for ocean current and temperature monitoring",
-    coverImage:
-      "https://images.unsplash.com/photo-1573648214626-2cd56b7bc17f?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80",
+      "Local Harvest is an online marketplace that connects shoppers to nearby farmers for easy pre‑ordering of fresh, local produce",
+    coverImage: "/images/project2/cover.jpg",
     images: [
       "https://images.unsplash.com/photo-1573648214626-2cd56b7bc17f?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80",
       "https://images.unsplash.com/photo-1581092921461-7d55b9d5b0b1?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80",
@@ -103,11 +102,15 @@ const projects = [
     githubUrl: "https://github.com",
     demoUrl: "https://example.com",
     motivation:
-      "I created this dashboard to help researchers visualize and analyze ocean data patterns in an intuitive interface.",
-    objectives:
-      "Design a real-time data processing pipeline, create interactive charts with D3.js, and implement a responsive dashboard layout.",
+      "In today’s world, everything is shifting towards digital—from ordering food to buying groceries, almost anything can be purchased online. Unlike large corporations with ample resources to launch their online stores, local farmers and market vendors often lack the tools and knowledge to sell their products online. Similarly, customers seeking fresh, locally sourced items face uncertain product availability, frequently visiting markets to discover their desired products are unavailable. This project aims to build an online marketplace that bridges the gap between buyers and sellers, empowering local businesses while providing consumers with reliable access to fresh, locally-grown goods.",
+    objectives: [
+      "Running an Agile project for the first time, including managing sprints, tasks, and iterative development",
+      "Translating designs provided by the design team into a fully functional and responsive web application",
+      "Collecting continuous user feedback and integrating it into development cycles to improve user experience",
+      "Practicing server-side rendering with EJS for efficient dynamic content generation and managing database operations using Prisma ORM in a scalable web application",
+    ],
     targetMarket:
-      "Marine research institutions, environmental agencies, and oceanographers.",
+      "This platform’s target audience is local farmers, small market vendors, and consumers who prefer purchasing fresh, locally grown products online for convenient in-person pickup.",
     features: [
       "Real-time data streaming from oceanic sensors",
       "Customizable dashboard with drag-and-drop widgets",

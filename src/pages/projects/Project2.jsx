@@ -1,4 +1,3 @@
-import { useEffect } from "react";
 import { motion } from "framer-motion";
 import { FaGithub, FaExternalLinkAlt, FaArrowLeft } from "react-icons/fa";
 import { Link } from "react-router-dom";
@@ -9,13 +8,6 @@ import Button from "../../components/ui/Button";
 
 const Project2 = () => {
   const project = projects[1]; // Using the second project from our data
-
-  useEffect(() => {
-    document.title = `${project.title} | Ocean Portfolio`;
-    return () => {
-      document.title = "Ocean Portfolio";
-    };
-  }, [project.title]);
 
   // Page transition animation
   const pageVariants = {
@@ -105,18 +97,22 @@ const Project2 = () => {
           {/* Project details */}
           <div className="grid md:grid-cols-2 gap-8">
             <div>
-              <h2 className="text-2xl font-bold text-white mb-4">Motivation</h2>
+              {/* <h2 className="text-2xl font-bold text-white mb-4">Motivation</h2> */}
               <p className="text-gray-300 mb-8">{project.motivation}</p>
+
+              {/* <h2 className="text-2xl font-bold text-white mb-4">
+                Target Market
+              </h2> */}
+              <p className="text-gray-300 mb-4">{project.targetMarket}</p>
 
               <h2 className="text-2xl font-bold text-white mb-4">
                 Learning Objectives
               </h2>
-              <p className="text-gray-300 mb-8">{project.objectives}</p>
-
-              <h2 className="text-2xl font-bold text-white mb-4">
-                Target Market
-              </h2>
-              <p className="text-gray-300">{project.targetMarket}</p>
+              <ul className="list-disc pl-5 text-gray-300 mb-8 space-y-2">
+                {project.objectives.map((feature, index) => (
+                  <li key={index}>{feature}</li>
+                ))}
+              </ul>
             </div>
 
             <div>
