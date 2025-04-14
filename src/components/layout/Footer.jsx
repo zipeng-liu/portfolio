@@ -1,13 +1,25 @@
 import { Link } from "react-router-dom";
+import { Link as ScrollLink } from "react-scroll";
 import { SiLeetcode } from "react-icons/si";
 import { FaHackerrank } from "react-icons/fa";
+import { useLocation } from "react-router-dom";
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
+  const location = useLocation();
+  const isHomePage = location.pathname === "/";
 
   const socialLinks = [
     { icon: SiLeetcode, url: "https://leetcode.com", label: "LeetCode" },
     { icon: FaHackerrank, url: "https://hackerrank.com", label: "HackerRank" },
+  ];
+
+  // Navigation links
+  const navLinks = [
+    { name: "Home", path: "/", scrollTo: "intro" },
+    { name: "Projects", path: "/", scrollTo: "projects" },
+    { name: "Skills", path: "/", scrollTo: "skills" },
+    { name: "Contact", path: "/", scrollTo: "contact" },
   ];
 
   return (
@@ -17,7 +29,7 @@ const Footer = () => {
           {/* Logo and Copyright */}
           <div className="mb-6 md:mb-0">
             <Link to="/" className="text-white text-xl font-bold">
-              <span className="text-cyan-400">Ocean</span>Portfolio
+              <span className="text-cyan-400">Zipeng</span>Portfolio
             </Link>
             <p className="text-gray-400 mt-2 text-sm">
               © {currentYear} All rights reserved.
@@ -45,27 +57,29 @@ const Footer = () => {
         {/* Navigation and Extra info */}
         <div className="mt-8 pt-8 border-t border-blue-800/50 flex flex-col md:flex-row justify-between">
           <nav className="flex flex-wrap gap-4 md:gap-8 mb-4 md:mb-0">
-            <Link to="/" className="text-gray-400 hover:text-white text-sm">
-              Home
-            </Link>
-            <Link
-              to="/#projects"
-              className="text-gray-400 hover:text-white text-sm"
-            >
-              Projects
-            </Link>
-            <Link
-              to="/#skills"
-              className="text-gray-400 hover:text-white text-sm"
-            >
-              Skills
-            </Link>
-            <Link
-              to="/#contact"
-              className="text-gray-400 hover:text-white text-sm"
-            >
-              Contact
-            </Link>
+            {navLinks.map((link) =>
+              isHomePage && link.scrollTo ? (
+                <ScrollLink
+                  key={link.name}
+                  to={link.scrollTo}
+                  spy={true}
+                  smooth={true}
+                  offset={-80}
+                  duration={500}
+                  className="text-gray-400 hover:text-white text-sm cursor-pointer"
+                >
+                  {link.name}
+                </ScrollLink>
+              ) : (
+                <Link
+                  key={link.name}
+                  to={link.path}
+                  className="text-gray-400 hover:text-white text-sm"
+                >
+                  {link.name}
+                </Link>
+              )
+            )}
           </nav>
 
           <p className="text-gray-500 text-sm">

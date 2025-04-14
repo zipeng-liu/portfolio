@@ -42,7 +42,7 @@ const ProjectsSection = () => {
             Want to see more of my work? Check out my GitHub repositories.
           </p>
           <a
-            href="https://github.com"
+            href="https://github.com/zipeng-liu"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center gap-2 bg-blue-800/50 hover:bg-blue-700 text-white py-3 px-6 rounded-lg transition-colors duration-300"
