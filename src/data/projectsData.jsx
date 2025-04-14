@@ -14,6 +14,7 @@ import {
   FaSass,
   FaVuejs,
   FaAngular,
+  FaBootstrap,
 } from "react-icons/fa";
 import {
   SiMongodb,
@@ -29,6 +30,7 @@ import {
   SiExpo,
   SiTensorflow,
   SiAwslambda,
+  SiFramer,
 } from "react-icons/si";
 
 const projects = [
@@ -163,96 +165,89 @@ const projects = [
     id: 3,
     title: "High School Website Redesign",
     description:
-      "A community-driven website for ocean cleanup initiatives and conservation projects",
+      "A modern responsive redesign of the Burnaby North Secondary School website to improve usability and information accessibility",
     coverImage: "/images/project3/cover.jpg",
     images: [
-      "https://images.unsplash.com/photo-1559252722-fb8915a77b8c?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80",
-      "https://images.unsplash.com/photo-1618956900896-9e8097552a8a?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80",
-      "https://images.unsplash.com/photo-1525382455947-f319bc05fb35?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80",
+      "/images/project3/picture1.png",
+      "/images/project3/picture2.png",
+      "/images/project3/picture3.png",
     ],
     techIcons: [
-      { icon: FaVuejs, name: "Vue.js", url: "https://vuejs.org/" },
-      {
-        icon: SiTailwindcss,
-        name: "Tailwind CSS",
-        url: "https://tailwindcss.com/",
-      },
-      { icon: FaNodeJs, name: "Node.js", url: "https://nodejs.org/" },
-      {
-        icon: SiFirebase,
-        name: "Firebase",
-        url: "https://firebase.google.com/",
-      },
-      { icon: FaGithub, name: "GitHub", url: "https://github.com/" },
-    ],
-    githubUrl: "https://github.com",
-    demoUrl: "https://example.com",
-    motivation:
-      "I wanted to create a centralized platform where conservation enthusiasts could organize cleanup events and track their collective impact.",
-    objectives:
-      "Build a community-driven platform, implement real-time event coordination, and visualize global conservation efforts on an interactive map.",
-    targetMarket:
-      "Environmental NGOs, conservation volunteers, and coastal communities.",
-    features: [
-      "Interactive map of cleanup events and projects",
-      "User profiles with impact statistics",
-      "Resource library for conservation methods",
-      "Event organization tools with volunteer management",
-      "Before/after photo galleries of cleanup sites",
-    ],
-    reflection:
-      "I did well by building a clear foundation and organized architecture for the app. By setting up folders so each one handled a specific feature with its logic, the team could easily divide work and focus on separate features without running into many merge conflicts. However, one significant mistake we made was relying on the CSS export functionality directly from Figma, especially given the heavy frontend and backend workloads within tight time constraints. The results didn’t work well as Figma exported styles individually by ID, making it challenging and inefficient to manage using vanilla CSS. If I could go back, I would use Bootstrap to streamline styling and accelerate development significantly. Another important takeaway was prioritizing the features that matter most to the user, ensuring we deliver maximum value in a limited time. Additionally, I’ve learned the importance of proactively addressing technical constraints early in the project. Identifying and resolving potential development issues earlier could have saved us considerable time and effort.",
-    conclusion:
-      "The platform has successfully connected volunteers with conservation projects worldwide, resulting in measurable impact on coastal ecosystems.",
-  },
-  {
-    id: 4,
-    title: "Oqua",
-    description:
-      "A responsive gallery website showcasing stunning underwater photography",
-    coverImage: "/images/project4/cover.jpg",
-    images: [
-      "https://images.unsplash.com/photo-1550505095-8347b331b3f5?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80",
-      "https://images.unsplash.com/photo-1549924231-f129b911e442?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80",
-      "https://images.unsplash.com/photo-1582967788606-a171c1080cb0?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80",
-    ],
-    techIcons: [
-      {
-        icon: FaHtml5,
-        name: "HTML5",
-        url: "https://developer.mozilla.org/en-US/docs/Web/HTML",
-      },
-      {
-        icon: FaCss3,
-        name: "CSS3",
-        url: "https://developer.mozilla.org/en-US/docs/Web/CSS",
-      },
+      { icon: FaReact, name: "React", url: "https://reactjs.org/" },
       {
         icon: FaJs,
         name: "JavaScript",
         url: "https://developer.mozilla.org/en-US/docs/Web/JavaScript",
       },
-      { icon: FaSass, name: "Sass", url: "https://sass-lang.com/" },
-      { icon: FaWordpress, name: "WordPress", url: "https://wordpress.org/" },
-      { icon: FaFigma, name: "Figma", url: "https://www.figma.com/" },
+      {
+        icon: FaBootstrap,
+        name: "Bootstrap",
+        url: "https://getbootstrap.com/",
+      },
     ],
-    githubUrl: "https://github.com",
-    demoUrl: "https://example.com",
+    githubUrl: "https://github.com/zipeng-liu/bnss-redesign",
+    demoUrl: "https://bnss-redesign.vercel.app/",
     motivation:
-      "I designed this portfolio to showcase the beauty of underwater environments through photography while demonstrating my design and front-end skills.",
+      "I wanted to create a more user-friendly website for Burnaby North Secondary School that would better serve students, parents, and staff by organizing information more intuitively and providing a responsive design for all devices.",
     objectives:
-      "Create a visually stunning gallery with optimized image loading, implement smooth transitions, and design an intuitive navigation system.",
+      "Implement a responsive layout using Bootstrap, create an intuitive navigation structure, improve content organization, and ensure accessibility standards were met for all users.",
     targetMarket:
-      "Professional photographers, art directors, and nature enthusiasts.",
+      "Students, parents, teachers, staff, prospective students, and the broader Burnaby North Secondary School community.",
     features: [
-      "Masonry gallery layout with lazy loading",
-      "Image zoom and slideshow functionality",
-      "Category filtering by marine environment",
-      "Photographer bio and contact form",
-      "Print shop integration for artwork purchase",
+      "Responsive design optimized for mobile, tablet, and desktop devices",
+      "Interactive calendar for school events and important dates",
+      "Searchable staff directory with contact information",
+      "News and announcements section with filtering capabilities",
+      "Resources section organized by department and student grade",
     ],
+    reflection:
+      "I successfully created a clean, organized architecture that made the codebase maintainable and extensible. By implementing component-based design with React, we were able to reuse UI elements across the site while maintaining consistency. Bootstrap significantly accelerated the development process by providing responsive design utilities out of the box. One challenge we faced was balancing the needs of multiple stakeholder groups (students, parents, and staff) who each prioritized different information. If I were to do it again, I would conduct more user testing earlier in the process to better validate our information architecture assumptions. Another lesson learned was the importance of setting up a proper content management workflow for school staff who needed to update the site regularly.",
     conclusion:
-      "This portfolio not only serves as a showcase for underwater photography but also demonstrates how performance optimization and aesthetic design can coexist in a web application.",
+      "The redesigned website has significantly improved the school's digital presence, making information more accessible to all stakeholders while providing a modern, responsive experience that better represents the school's values and community.",
+  },
+  {
+    id: 4,
+    title: "Oqua",
+    description:
+      "A frontend water intake tracking application with animated visualization and personalized recommendations",
+    coverImage: "/images/project4/cover.jpg",
+    images: [
+      "/images/project4/picture1.png",
+      "/images/project4/picture2.png",
+      "/images/project4/picture3.png",
+    ],
+    techIcons: [
+      { icon: FaReact, name: "React", url: "https://reactjs.org/" },
+      {
+        icon: FaJs,
+        name: "JavaScript",
+        url: "https://developer.mozilla.org/en-US/docs/Web/JavaScript",
+      },
+      {
+        icon: SiFramer,
+        name: "Framer Motion",
+        url: "https://www.framer.com/motion/",
+      },
+    ],
+    githubUrl: "https://github.com/zipeng-liu/oqua",
+    demoUrl: "https://oqua-water-tracker.netlify.app/",
+    motivation:
+      "I wanted to create an engaging water tracking app with fluid animations that would make hydration tracking more enjoyable, while also experimenting with Framer Motion for the first time.",
+    objectives:
+      "Build a frontend web application that could later be developed into a mobile app, implement smooth animations with Framer Motion, and create an intuitive interface for tracking daily water intake.",
+    targetMarket:
+      "Health-conscious individuals who want a simple but visually engaging way to track their water consumption habits.",
+    features: [
+      "Initial quiz to calculate recommended daily water intake",
+      "Animated water droplet showing daily progress using Framer Motion",
+      "Preset water amounts for quick logging with custom input option",
+      "Local storage integration to persist user data between sessions",
+      "Responsive design foundation for future mobile app development",
+    ],
+    reflection:
+      "This project marked my first experience with Framer Motion, which proved to be an excellent tool for creating fluid, physics-based animations for the water droplet visualization. The learning curve was steeper than expected, but the resulting animations added significant value to the user experience. I successfully implemented the calculation quiz and preset logging system, though managing state across the application required careful planning. If I were to rebuild this project, I would structure the code more carefully from the beginning with the mobile app transition in mind. As this was a frontend-only implementation, the next phase would be connecting it to a backend database and developing a native mobile version to provide a more complete user experience with notifications and long-term data persistence.",
+    conclusion:
+      "Hydro Track successfully demonstrates that even a frontend-only application can provide meaningful value when designed thoughtfully. The animated water visualization created with Framer Motion proved particularly effective at making hydration tracking more engaging, and the project has established a solid foundation for future development into a full-featured mobile application.",
   },
 ];
 
