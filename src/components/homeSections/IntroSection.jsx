@@ -38,7 +38,7 @@ const IntroSection = () => {
           animate="visible"
         >
           <motion.div variants={itemVariants} className="mb-6">
-            <span className="bg-cyan-500/20 text-cyan-300 px-4 py-1.5 rounded-full text-sm inline-block mb-4">
+            <span className="bg-cyan-500/20 text-white-300 px-4 py-1.5 rounded-full text-sm inline-block mb-4">
               Full Stack Developer
             </span>
           </motion.div>

@@ -10,7 +10,7 @@ const TechIcon = ({ icon: Icon, name, url }) => {
         href={url}
         target="_blank"
         rel="noopener noreferrer"
-        className="text-cyan-300 hover:text-cyan-100 transition-colors duration-300"
+        className="text-white-300 hover:text-white-100 transition-colors duration-300"
         aria-label={name}
         onClick={(e) => {
           if (!url || url === "#") {
