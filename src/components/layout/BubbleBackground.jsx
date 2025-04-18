@@ -3,75 +3,75 @@ import { useRef, useEffect } from "react";
 const BubbleBackground = () => {
   const canvasRef = useRef(null);
   const requestIdRef = useRef(null);
+  const scrollFactorRef = useRef(0);
 
   useEffect(() => {
     const canvas = canvasRef.current;
     if (!canvas) return;
-
     const ctx = canvas.getContext("2d", { alpha: false });
 
-    // Generate more bubbles with improved visibility
+    // bubbles setup
     const bubbles = Array.from({ length: 40 }).map(() => ({
       x: Math.random() * window.innerWidth,
-      y: window.innerHeight + Math.random() * 100, // Start below viewport
-      size: 8 + Math.random() * 35, // Slightly larger bubbles
-      speed: 0.3 + Math.random() * 0.7, // Increased speed for more dynamic movement
-      opacity: 0.2 + Math.random() * 0.5, // Higher opacity for better visibility
+      y: window.innerHeight + Math.random() * 100,
+      size: 8 + Math.random() * 35,
+      speed: 0.5 + Math.random() * 1.0,
+      opacity: 0.2 + Math.random() * 0.5,
     }));
 
-    // Set canvas dimensions and handle resize
+    // handle resize
     const handleResize = () => {
       canvas.width = window.innerWidth;
       canvas.height = window.innerHeight;
-
-      // Redistribute bubbles on resize
-      bubbles.forEach((bubble) => {
-        bubble.x = Math.random() * canvas.width;
-      });
+      bubbles.forEach((b) => (b.x = Math.random() * canvas.width));
     };
-
     window.addEventListener("resize", handleResize);
     handleResize();
 
-    let lastTime = 0;
+    // track scroll without rerunning effect
+    window.addEventListener("scroll", () => {
+      scrollFactorRef.current = Math.min(
+        window.scrollY / window.innerHeight,
+        1
+      );
+    });
 
-    // Optimized animation loop with time delta
+    let lastTime = 0;
+    const SPEED_MULTIPLIER = 0.025;
+
     const animate = (timestamp) => {
-      // Calculate time delta for smooth animation regardless of frame rate
       const deltaTime = timestamp - lastTime;
       lastTime = timestamp;
-
       if (!deltaTime) {
         requestIdRef.current = requestAnimationFrame(animate);
         return;
       }
 
+      // clear
       ctx.clearRect(0, 0, canvas.width, canvas.height);
 
-      // Draw background gradient with slightly more contrast
-      const gradient = ctx.createLinearGradient(0, 0, 0, canvas.height);
-      gradient.addColorStop(0, "#05103b"); // Deep blue at top
-      gradient.addColorStop(1, "#061f6c"); // Slightly brighter blue at bottom
-      ctx.fillStyle = gradient;
+      // subtle sky gradient with a brighter top
+      const factor = scrollFactorRef.current;
+      const topAlpha = 1 - factor * 0.2; // from 1 → 0.8 on scroll
+      const grad = ctx.createLinearGradient(0, 0, 0, canvas.height);
+      // Brighter blue at the top:
+      grad.addColorStop(0, `rgba(12,57,111,${topAlpha})`);
+      // Deep navy at the bottom:
+      grad.addColorStop(1, "#05103b");
+      ctx.fillStyle = grad;
       ctx.fillRect(0, 0, canvas.width, canvas.height);
 
-      // Draw bubbles with enhanced glow
+      // draw bubbles
       for (const bubble of bubbles) {
-        // Normalized speed based on delta time for consistent movement
-        const moveAmount = bubble.speed * deltaTime * 0.015; // Increased movement multiplier
-        bubble.y -= moveAmount;
-
-        // Reset bubble when it goes off-screen
+        bubble.y -= bubble.speed * deltaTime * SPEED_MULTIPLIER;
         if (bubble.y < -bubble.size) {
           bubble.y = canvas.height + bubble.size;
           bubble.x = Math.random() * canvas.width;
           bubble.size = 8 + Math.random() * 35;
-          bubble.speed = 0.3 + Math.random() * 0.7;
+          bubble.speed = 0.5 + Math.random() * 1.0;
         }
 
-        // Draw bubble with enhanced glow
-        ctx.beginPath();
-        const bubbleGradient = ctx.createRadialGradient(
+        const glow = ctx.createRadialGradient(
           bubble.x,
           bubble.y,
           0,
@@ -79,27 +79,15 @@ const BubbleBackground = () => {
           bubble.y,
           bubble.size
         );
+        glow.addColorStop(0, `rgba(200,240,255,${bubble.opacity * 1.2})`);
+        glow.addColorStop(0.6, `rgba(150,220,255,${bubble.opacity * 0.7})`);
+        glow.addColorStop(1, `rgba(100,200,255,0)`);
 
-        // Brighter center color with higher opacity
-        bubbleGradient.addColorStop(
-          0,
-          `rgba(200, 240, 255, ${bubble.opacity * 1.2})`
-        );
-
-        // Middle gradient stop for better glow effect
-        bubbleGradient.addColorStop(
-          0.6,
-          `rgba(150, 220, 255, ${bubble.opacity * 0.7})`
-        );
-
-        bubbleGradient.addColorStop(1, `rgba(100, 200, 255, 0)`);
-
-        ctx.fillStyle = bubbleGradient;
+        ctx.beginPath();
+        ctx.fillStyle = glow;
         ctx.arc(bubble.x, bubble.y, bubble.size, 0, Math.PI * 2);
         ctx.fill();
-
-        // Add subtle border to enhance bubble visibility
-        ctx.strokeStyle = `rgba(150, 220, 255, ${bubble.opacity * 0.3})`;
+        ctx.strokeStyle = `rgba(150,220,255,${bubble.opacity * 0.3})`;
         ctx.lineWidth = 1;
         ctx.stroke();
       }
@@ -107,13 +95,12 @@ const BubbleBackground = () => {
       requestIdRef.current = requestAnimationFrame(animate);
     };
 
-    // Start animation
     requestIdRef.current = requestAnimationFrame(animate);
 
-    // Cleanup
     return () => {
       cancelAnimationFrame(requestIdRef.current);
       window.removeEventListener("resize", handleResize);
+      window.removeEventListener("scroll", () => {});
     };
   }, []);
 
