@@ -1,37 +1,21 @@
+import { FaReact, FaNodeJs, FaPython, FaJs, FaBootstrap } from "react-icons/fa";
 import {
-  FaReact,
-  FaNodeJs,
-  FaDatabase,
-  FaFigma,
-  FaWordpress,
-  FaAws,
-  FaDocker,
-  FaGithub,
-  FaPython,
-  FaJs,
-  FaHtml5,
-  FaCss3,
-  FaSass,
-  FaVuejs,
-  FaAngular,
-  FaBootstrap,
-} from "react-icons/fa";
-import {
-  SiMongodb,
   SiExpress,
   SiTailwindcss,
-  SiNextdotjs,
-  SiGraphql,
   SiTypescript,
   SiMysql,
   SiPrisma,
   SiCss3,
   SiFirebase,
   SiExpo,
+  SiDotnet,
   SiTensorflow,
   SiAwslambda,
   SiFramer,
+  SiEjs,
 } from "react-icons/si";
+import { TbBrandCSharp } from "react-icons/tb";
+import { VscAzure } from "react-icons/vsc";
 
 const projects = [
   {
@@ -130,6 +114,7 @@ const projects = [
       },
       { icon: FaNodeJs, name: "Node.js", url: "https://nodejs.org/" },
       { icon: SiExpress, name: "Express", url: "https://expressjs.com/" },
+      { icon: SiEjs, name: "EJS", url: "https://ejs.co/" },
       { icon: SiPrisma, name: "Prisma", url: "https://www.prisma.io/" },
       { icon: SiMysql, name: "MySQL", url: "https://www.mysql.com/" },
       {
@@ -163,14 +148,77 @@ const projects = [
   },
   {
     id: 3,
-    title: "High School Website Redesign",
+    title: "Event Booking App",
     description:
-      "A modern responsive redesign of the Burnaby North Secondary School website to improve usability and information accessibility",
+      "Event Booking is an ASP.NET Core MVC web application that enables users to browse and book events, while giving administrators full control over event creation, ticket availability, and booking management.",
     coverImage: "/images/project3/cover.jpg",
     images: [
       "/images/project3/picture1.png",
       "/images/project3/picture2.png",
       "/images/project3/picture3.png",
+      "/images/project3/picture4.png",
+    ],
+    techIcons: [
+      {
+        icon: TbBrandCSharp,
+        name: "C#",
+        url: "https://docs.microsoft.com/dotnet/csharp/",
+      },
+      {
+        icon: SiDotnet,
+        name: "ASP.NET Core",
+        url: "https://docs.microsoft.com/aspnet/core/mvc/",
+      },
+      {
+        icon: SiMysql,
+        name: "MySQL",
+        url: "https://www.mysql.com/",
+      },
+      {
+        icon: VscAzure,
+        name: "Azure",
+        url: "https://azure.microsoft.com/",
+      },
+      {
+        icon: FaBootstrap,
+        name: "Bootstrap",
+        url: "https://getbootstrap.com/",
+      },
+    ],
+    githubUrl: "https://github.com/zipeng-liu/EventBookingApp",
+    demoUrl:
+      "https://eventapp-g2guhbbbewhydvc5.canadacentral-01.azurewebsites.net/",
+    motivation:
+      "Many event organizers still rely on manual spreadsheets or fragmented tools to manage ticket sales and attendee lists, leading to errors and wasted time. This project aims to deliver a unified, scalable platform that simplifies event setup and ticketing for organizers, while offering users an intuitive browsing and booking experience.",
+    objectives: [
+      "Implement role‑based authentication and authorization using ASP.NET Core Identity for Admin and User experiences.",
+      "Apply the repository‑service‑controller pattern with Entity Framework Core and MySQL to ensure a maintainable, testable codebase.",
+      "Build responsive, accessible UI components with Bootstrap to support seamless use across devices.",
+      "Deploy to Azure with an automated CI/CD pipeline, ensuring reliable builds and zero‑downtime updates.",
+    ],
+    targetMarket:
+      "Event organizers seeking a streamlined online ticketing solution, and attendees looking for a user‑friendly way to discover and book local events.",
+    features: [
+      "Browse Events: Users can filter and view upcoming events with full details, including date, location, and ticket availability.",
+      "Book Tickets: Select desired ticket types and quantities, complete checkout, and receive instant email confirmations.",
+      "Manage Events: Administrators can create, update, and delete events, set ticket limits, and monitor booking statistics in real time.",
+      "View Booking History: Both users and admins can access comprehensive records of past bookings for reporting and auditing.",
+    ],
+    reflection:
+      "I did well by structuring the codebase with a clear repository‑service‑controller architecture, which made it easy to extend and maintain. Leveraging EF Core migrations simplified database versioning. However, I delayed writing unit tests for the service and controller layers, resulting in late‑stage bug fixes. In future projects, I’ll adopt Test‑Driven Development from the outset. I also learned the value of planning the Azure CI/CD pipeline earlier—setting it up mid‑project would have avoided last‑minute deployment hurdles.",
+    conclusion:
+      "This project was an invaluable hands‑on experience in full‑stack .NET development. I deepened my skills in ASP.NET Core MVC, EF Core, and Bootstrap, and learned to deploy and automate releases on Azure. Overall, it strengthened my ability to deliver scalable, maintainable web applications under agile methodologies.",
+  },
+  {
+    id: 4,
+    title: "High School Website Redesign",
+    description:
+      "A modern responsive redesign of the Burnaby North Secondary School website to improve usability and information accessibility",
+    coverImage: "/images/project4/cover.jpg",
+    images: [
+      "/images/project4/picture1.png",
+      "/images/project4/picture2.png",
+      "/images/project4/picture3.png",
     ],
     techIcons: [
       { icon: FaReact, name: "React", url: "https://reactjs.org/" },
@@ -206,15 +254,15 @@ const projects = [
       "The redesigned website has significantly improved the school's digital presence, making information more accessible to all stakeholders while providing a modern, responsive experience that better represents the school's values and community.",
   },
   {
-    id: 4,
+    id: 5,
     title: "Oqua",
     description:
       "A frontend water intake tracking application with animated visualization and personalized recommendations",
-    coverImage: "/images/project4/cover.jpg",
+    coverImage: "/images/project5/cover.jpg",
     images: [
-      "/images/project4/picture1.png",
-      "/images/project4/picture2.png",
-      "/images/project4/picture3.png",
+      "/images/project5/picture1.png",
+      "/images/project5/picture2.png",
+      "/images/project5/picture3.png",
     ],
     techIcons: [
       { icon: FaReact, name: "React", url: "https://reactjs.org/" },
@@ -227,6 +275,11 @@ const projects = [
         icon: SiFramer,
         name: "Framer Motion",
         url: "https://www.framer.com/motion/",
+      },
+      {
+        icon: SiTailwindcss,
+        name: "Tailwind CSS",
+        url: "https://tailwindcss.com/",
       },
     ],
     githubUrl: "https://github.com/zipeng-liu/oqua",

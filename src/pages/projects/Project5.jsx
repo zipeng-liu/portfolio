@@ -6,8 +6,8 @@ import Carousel from "../../components/ui/Carousel";
 import TechIcon from "../../components/ui/TechIcon";
 import Button from "../../components/ui/Button";
 
-const Project4 = () => {
-  const project = projects[3]; // Using the second project from our data
+const Project5 = () => {
+  const project = projects[4]; // Using the second project from our data
 
   // Page transition animation
   const pageVariants = {
@@ -162,7 +162,7 @@ const Project4 = () => {
           {/* Next/Prev Project Navigation */}
           <div className="mt-12 pt-8 border-t border-blue-800">
             <div className="flex flex-col sm:flex-row justify-between items-center">
-              <Button to="/project/3" variant="ghost" className="mb-4 sm:mb-0">
+              <Button to="/project/4" variant="ghost" className="mb-4 sm:mb-0">
                 &larr; Previous Project
               </Button>
 
@@ -177,4 +177,4 @@ const Project4 = () => {
   );
 };
 
-export default Project4;
+export default Project5;
